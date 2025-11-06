@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andriy Tsar — Back‑End / Full‑Stack Developer</title>
+  <meta name="description" content="Back‑End & Full‑Stack Developer. Node.js, TypeScript, SQL, Docker. Building reliable APIs, automation systems, and scalable architectures." />
+  <meta property="og:title" content="Andriy Tsar — Developer" />
+  <meta property="og:description" content="Node.js • TypeScript • SQL • Docker — APIs, automation, scalability." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/preview.png" />
+  <link rel="icon" href="assets/favicon.png" />
+  <style>
+    :root{
+      --bg:#0f172a;           /* slate-900 */
+      --bg-soft:#111827;      /* gray-900 */
+      --panel:#0b1222;        
+      --text:#e5e7eb;         /* gray-200 */
+      --muted:#94a3b8;        /* slate-400 */
+      --brand:#d4af37;        /* gold accent */
+      --accent:#22d3ee;       /* cyan accent for subtle highlights */
+      --card: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, Segoe UI, Roboto, Inter, Arial, sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    header{
+      position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(15,23,42,.95), rgba(15,23,42,.75) 70%, rgba(15,23,42,0));backdrop-filter: blur(8px);border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .logo{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:radial-gradient(120px 80px at 30% 20%, rgba(212,175,55,.35), transparent),
+           linear-gradient(160deg, rgba(34,211,238,.25), transparent 60%), #0b1222;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow)}
+    .logo span{font-weight:800;color:var(--brand)}
+    .nav a.link{opacity:.9;color:var(--text)}
+    .nav a.link:hover{color:white}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;background:var(--brand);color:#0c0c0c;font-weight:700;border:1px solid rgba(0,0,0,.2);box-shadow: 0 6px 20px rgba(212,175,55,.3)}
+    .btn:hover{filter:brightness(1.05)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:64px 0}
+    .tag{display:inline-block;padding:6px 12px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.04)}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:12px 0 8px}
+    .accent{color:var(--brand)}
+    .lead{color:var(--muted);max-width:60ch}
+    .hero-card{border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.08);padding:18px;box-shadow:var(--shadow)}
+    .hero-card img{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.1)}
+    .quick{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .chip{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--muted)}
+
+    /* Section */
+    section{padding:18px 0 54px}
+    .section-title{display:flex;align-items:center;gap:10px;margin:8px 0 18px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:white}
+    .section-title .bar{width:18px;height:18px;border-radius:6px;background:conic-gradient(from 120deg, var(--brand), rgba(212,175,55,.15));box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+
+    /* Projects */
+    .grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:20px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .card::after{content:"";position:absolute;inset:-40% -40% auto auto;height:200px;width:200px;background:radial-gradient(120px 120px at 50% 50%, rgba(212,175,55,.18), transparent 60%)}
+    .card h3{margin:6px 0 8px}
+    .meta{color:var(--muted);font-size:.92rem}
+    .actions{display:flex;gap:10px;margin-top:12px}
+    .ghost{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.16);color:var(--text)}
+    .ghost:hover{border-color:var(--brand)}
+
+    /* Skills */
+    .badges{display:flex;flex-wrap:wrap;gap:10px}
+    .badge{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03)}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .contact .panel{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px}
+    .small{color:var(--muted);font-size:.95rem}
+
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:24px 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+    }
+
+    /* Appear animation */
+    .reveal{opacity:0;transform:translateY(14px);transition:all .6s ease}
+    .reveal.show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo"><span>AT</span></div>
+        <div>Andriy Tsar</div>
+      </div>
+      <nav style="display:flex;gap:16px">
+        <a class="link" href="#projects">Projects</a>
+        <a class="link" href="#skills">Skills</a>
+        <a class="link" href="#contact">Contact</a>
+        <a class="btn" href="assets/Andriy_Tsar_FullStack_Backend_Developer_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <span class="tag">Full Stack / Back‑End Developer</span>
+        <h1>Building <span class="accent">reliable APIs</span> and <span class="accent">automation systems</span> with Node.js, TypeScript, SQL and Docker.</h1>
+        <p class="lead">I design and implement back‑end architectures, authentication, testing, and DevOps‑friendly workflows. Currently advancing through the Meta Back‑End Developer Specialization.</p>
+        <div class="quick">
+          <span class="chip">Node.js</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Docker</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">Jest</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <!-- Replace with your photo in assets/portrait.jpg -->
+        <img src="assets/CV photo 1.jpg" alt="Andriy Tsar portrait" />
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+      <div class="section-title"><div class="bar"></div> Projects</div>
+      <div class="grid">
+        <article class="card">
+          <div class="meta">Automation • Node.js • MongoDB • JWT • Swagger • Jest</div>
+          <h3>Smart Automator</h3>
+          <p>Automation platform with custom triggers and actions, safe execution, validation and tests.</p>
+          <div class="actions">
+            <a class="ghost" href="https://github.com/AndriyAtWork25/smart-task-automator.git" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="meta">REST • Node.js • Express • Docker • Auth</div>
+          <h3>Task Manager API</h3>
+          <p>Secure CRUD API with JWT authentication, input validation, and modular architecture.</p>
+          <div class="actions">
+            <a class="ghost" href="https://github.com/AndriyAtWork25/TaskManagerAPI.git" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="meta">Blog • JWT • SendGrid • MongoDB</div>
+          <h3>Blog API</h3>
+          <p>RESTful blog backend with email verification, role‑based access and OpenAPI docs.</p>
+          <div class="actions">
+            <a class="ghost" href="https://github.com/AndriyAtWork25/Detective-blog.git" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <div class="section-title"><div class="bar"></div> Skills & Tools</div>
+      <div class="badges">
+        <span class="badge">JavaScript (ES6+)</span>
+        <span class="badge">TypeScript</span>
+        <span class="badge">Node.js</span>
+        <span class="badge">Express</span>
+        <span class="badge">SQL</span>
+        <span class="badge">MongoDB</span>
+        <span class="badge">Docker</span>
+        <span class="badge">Git</span>
+        <span class="badge">Jest</span>
+        <span class="badge">Swagger / OpenAPI</span>
+        <span class="badge">Auth & JWT</span>
+        <span class="badge">REST APIs</span>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <div class="section-title"><div class="bar"></div> Contact</div>
+      <div class="contact">
+        <div class="panel">
+          <h3>Let’s work.</h3>
+          <p class="small">Email: <a href="mailto:andriy.tsar8@gmail.com">andriy.tsar8@gmail.com</a><br>
+          GitHub: <a href="https://github.com/AndriyAtWork25" target="_blank" rel="noopener">github.com/AndriyAtWork25</a><br>
+          LinkedIn: <a href="https://www.linkedin.com/in/andriy-tsar/" target="_blank" rel="noopener">linkedin.com/in/andriy-tsar</a></p>
+          <a class="btn" href="mailto:andriy.tsar8@gmail.com">Contact me</a>
+        </div>
+        <div class="panel">
+          <h3>About</h3>
+          <p class="small">Back‑End & Full‑Stack developer focused on automation, API design and scalable architectures. Currently completing the Meta Back‑End Developer Specialization and building production‑ready projects.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Andriy Tsar — Code. Automate. Scale.</div>
+  </footer>
+
+  <script>
+    // simple appear-on-scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); })
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
