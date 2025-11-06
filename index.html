@@ -31,9 +31,22 @@
     header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(18,18,18,.95),rgba(18,18,18,.75)70%,rgba(18,18,18,0));backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px;font-weight:700}
-    .logo{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:radial-gradient(120px 80px at 30% 20%,rgba(212,175,55,.35),transparent),
-           linear-gradient(160deg,rgba(212,175,55,.25),transparent 60%),#0f0f0f;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);transition:all .3s ease}
-    .logo:hover{box-shadow:0 0 20px rgba(212,175,55,.6),inset 0 0 10px rgba(212,175,55,.3);}
+    .logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(120px 80px at 30% 20%, rgba(212,175,55,.35), transparent),
+              linear-gradient(160deg, rgba(212,175,55,.25), transparent 60%), #0f0f0f;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 0 6px rgba(212,175,55,.25), inset 0 0 8px rgba(212,175,55,.15);
+    transition: all .4s ease;
+    }
+    .logo:hover {
+    box-shadow: 0 0 16px rgba(212,175,55,.6), inset 0 0 8px rgba(212,175,55,.3);
+    }
+
     .logo span{font-weight:800;color:var(--brand)}
     .nav a.link{opacity:.9;color:var(--text)}
     .nav a.link:hover{color:white}
@@ -200,6 +213,9 @@
         <span class="badge">Swagger / OpenAPI</span>
         <span class="badge">Auth & JWT</span>
         <span class="badge">REST APIs</span>
+        <span class="badge" style="border-color:var(--brand);color:var(--brand);animation:pulse 2s infinite ease-in-out;">
+        Currently learning: Advanced Back-End Architecture (Meta) • Building new projects • Expanding Full Stack skills
+        </span>
       </div>
     </section>
 
