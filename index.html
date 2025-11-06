@@ -12,16 +12,16 @@
   <link rel="icon" href="assets/favicon.png" />
   <style>
     :root{
-      --bg:#0f172a;           /* slate-900 */
-      --bg-soft:#111827;      /* gray-900 */
-      --panel:#0b1222;        
-      --text:#e5e7eb;         /* gray-200 */
-      --muted:#94a3b8;        /* slate-400 */
-      --brand:#d4af37;        /* gold accent */
-      --accent:#22d3ee;       /* cyan accent for subtle highlights */
-      --card: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
+    --bg:#121212;           /* dark graphite */
+    --bg-soft:#171717;      /* softer graphite */
+    --panel:#0f0f0f;        
+    --text:#eaeaea;         /* light text */
+    --muted:#b0b0b0;        /* muted text */
+    --brand:#d4af37;        /* gold accent */
+    --accent:#d4af37;       /* same as brand */
+    --card: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+    --radius: 18px;
     }
     *{box-sizing:border-box}
     html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, Segoe UI, Roboto, Inter, Arial, sans-serif;-webkit-font-smoothing:antialiased}
@@ -33,7 +33,8 @@
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px;font-weight:700}
     .logo{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:radial-gradient(120px 80px at 30% 20%, rgba(212,175,55,.35), transparent),
-           linear-gradient(160deg, rgba(34,211,238,.25), transparent 60%), #0b1222;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow)}
+           linear-gradient(160deg, rgba(212,175,55,.25), transparent 60%), #0f0f0f;
+border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow)}
     .logo span{font-weight:800;color:var(--brand)}
     .nav a.link{opacity:.9;color:var(--text)}
     .nav a.link:hover{color:white}
