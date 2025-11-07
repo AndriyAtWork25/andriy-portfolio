@@ -226,6 +226,9 @@
         <div class="panel">
           <h3>Let’s work.</h3>
           <p class="small">Email: <a href="mailto:andriy.tsar8@gmail.com">andriy.tsar8@gmail.com</a><br>
+             <button id="copyEmailBtn" class="copy-btn" type="button" data-email="andriy.tsar8@gmail.com" aria-label="Copy email">
+             Copy email
+             </button><br>
           GitHub: <a href="https://github.com/AndriyAtWork25" target="_blank" rel="noopener">github.com/AndriyAtWork25</a><br>
           LinkedIn: <a href="https://www.linkedin.com/in/andriy-tsar/" target="_blank" rel="noopener">linkedin.com/in/andriy-tsar</a></p>
           <a class="btn" href="mailto:andriy.tsar8@gmail.com">Contact me</a>
@@ -248,6 +251,27 @@
       const preloader = document.getElementById("preloader");
       setTimeout(() => preloader.classList.add("hide"), 800);
     });
+    // Copy email button
+    const copyBtn = document.getElementById('copyEmailBtn');
+    if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+    const email = copyBtn.dataset.email || 'andriy.tsar8@gmail.com';
+    try {
+      await navigator.clipboard.writeText(email);
+      const prev = copyBtn.textContent;
+      copyBtn.textContent = 'Copied!';
+      copyBtn.disabled = true;
+      setTimeout(() => {
+        copyBtn.textContent = prev;
+        copyBtn.disabled = false;
+      }, 1200);
+     } catch (e) {
+      // Фолбек, якщо Clipboard API недоступний
+      window.location.href = 'mailto:' + email;
+     }
+     });
+ }
+
 
     // simple appear-on-scroll
     const io = new IntersectionObserver((entries)=>{
