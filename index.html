@@ -108,6 +108,31 @@
     @media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}}
     .reveal{opacity:0;transform:translateY(14px);transition:all .6s ease}
     .reveal.show{opacity:1;transform:none}
+
+    /* --- GIF previews --- */
+   .previews {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   margin-top: 12px;
+   }
+
+  .preview {
+   width: 100%;
+   border-radius: 8px;
+   border: 1px solid rgba(255,255,255,0.1);
+   transition: transform .25s ease, box-shadow .25s ease;
+   }
+
+   .preview:hover {
+   transform: scale(1.03);
+   box-shadow: 0 0 14px rgba(212,175,55,.25);
+   }
+
+  .preview.secondary {
+  opacity: 0.9;
+  filter: brightness(0.9);
+  }
     /* Preloader */
     #preloader {
     position: fixed;
@@ -197,6 +222,10 @@
           <div class="meta">REST • Node.js • Express • Docker • Auth</div>
           <h3>Task Manager API</h3>
           <p>Secure CRUD API with JWT authentication, input validation, and modular architecture.</p>
+          <div class="previews">
+          <img src="assets/taskmanager-preview.gif" alt="Task Manager Swagger preview" class="preview">
+          <img src="assets/taskmanager-preview2.gif" alt="Task Manager App overview" class="preview secondary">
+          </div>
           <div class="actions">
             <a class="ghost" href="https://github.com/AndriyAtWork25/TaskManagerAPI.git" target="_blank" rel="noopener">GitHub</a>
           </div>
