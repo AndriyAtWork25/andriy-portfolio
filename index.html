@@ -129,6 +129,17 @@
    box-shadow: 0 0 14px rgba(212,175,55,.25);
    }
 
+   .preview-label {
+  font-size: 0.9rem;
+  color: var(--brand);
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  }
+
+
   .preview.secondary {
   opacity: 0.9;
   filter: brightness(0.9);
@@ -215,9 +226,11 @@
           <h3>Smart Automator</h3>
           <p>Automation platform with custom triggers and actions, safe execution, validation and tests.</p>
            <div class="previews">
+           <div class="preview-label">Swagger Documentation</div>
            <img src="assets/smart-api-preview1.gif" 
            alt="Smart Automator Swagger preview" 
            class="preview">
+           <div class="preview-label">Automation Panel Overview, Telegram message test</div>
            <img src="assets/smart-api-preview2.gif" 
            alt="Smart Automator interface and triggers overview" 
            class="preview secondary">
@@ -231,7 +244,9 @@
           <h3>Task Manager API</h3>
           <p>Secure CRUD API with JWT authentication, input validation, and modular architecture.</p>
           <div class="previews">
+          <div class="preview-label">Swagger Documentation</div>
           <img src="assets/taskmanager-preview.gif" alt="Task Manager Swagger preview" class="preview">
+          <div class="preview-label">App Overview</div>
           <img src="assets/taskmanager-preview2.gif" alt="Task Manager App overview" class="preview secondary">
           </div>
           <div class="actions">
@@ -242,13 +257,15 @@
           <div class="meta">Blog • JWT • SendGrid • MongoDB</div>
           <h3>Blog API</h3>
           <p>RESTful blog backend with email verification, role‑based access and OpenAPI docs.</p>
-          <div class="previews">
+          <div class="preview-label">Swagger Docs</div>
           <img src="assets/blogapi-preview.gif" 
           alt="Blog API Swagger documentation preview" 
           class="preview">
+          <div class="preview-label">Blog CRUD Interface, create Post</div>
           <img src="assets/blogapi-preview2.gif" 
           alt="Blog API CRUD and post management" 
           class="preview secondary">
+          <div class="preview-label">Email Verification Flow</div>
           <img src="assets/blogapi-preview3.gif" 
           alt="Blog API email verification workflow" 
           class="preview secondary">
