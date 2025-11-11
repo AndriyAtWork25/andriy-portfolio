@@ -195,6 +195,20 @@
   padding-top: 12px;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .previews {
+  flex-grow: 1;
+}
+
+.card .actions {
+  margin-top: 16px;
+  align-self: flex-start;
+}
+
 
   </style>
 </head>
@@ -280,6 +294,11 @@
           <div class="meta">Blog • JWT • SendGrid • MongoDB</div>
           <h3>Blog API</h3>
           <p>RESTful blog backend with email verification, role‑based access and OpenAPI docs.</p>
+           <div class="previews">
+           <div class="preview-label">Swagger Docs</div>
+           <img src="assets/blogapi-preview.gif" 
+           alt="Blog API Swagger documentation preview" 
+           class="preview">
           <div class="preview-label">Blog CRUD Interface, create Post</div>
           <img src="assets/blogapi-preview2.gif" 
           alt="Blog API CRUD and post management" 
