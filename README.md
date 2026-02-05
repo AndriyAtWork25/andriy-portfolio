@@ -19,7 +19,7 @@ It represents my work as a **Full-Stack / Back-End Developer** based in Germany 
 ---
 
 ### 🚀 Live Website
-🔗 [**andriytsar.github.io/portfolio**](https://andriytsar.github.io/portfolio)
+🔗 [**andriytsar.github.io/portfolio**](https://andriyatwork25.github.io/andriy-portfolio/)
 
 ---
 
